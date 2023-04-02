@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Tasks from './Tasks';
 import {CarsTable} from "./CarsTable";
+import {Button} from "./Button";
 
 
 // Hi Guys!
@@ -134,11 +135,17 @@ function App() {
         ]
     }
 
+    const clickHandler = (text: string) => {
+        console.log(text)
+    }
+
     return (
-        <div className="App">
+        <div>
             <Tasks title={data1.title} tasks={data1.tasks} students={data1.students} />
             <Tasks title={data2.title} tasks={data2.tasks} students={data2.students} />
             <CarsTable tableData={topCars}/>
+            <Button name={'Button 1'} callBack={() => clickHandler('first button')}/>
+            <Button name={'Button 2'} callBack={() => clickHandler('second button')}/>
         </div>
     );
 }
