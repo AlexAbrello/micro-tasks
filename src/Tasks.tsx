@@ -13,15 +13,19 @@ type TasksType = {
 }
 
 function Tasks(props: TasksPropsType) {
+
+  const tasks = props.tasks.map((e, index) => <li key={index}><input type="checkbox" checked={e.isDone}/>{e.title}</li>)
+  const students = props.students.map((e, index) => <li key={index}>{e}</li>)
+
    return (
       <div>
          <h3>{props.title}</h3>
          <ul>
-            {props.tasks.map(e => <li><input type="checkbox" checked={e.isDone}/>{e.title}</li>)}
+           {tasks}
          </ul>
          <div>List of students:</div>
          <ul>
-            {props.students.map(e => <li>{e}</li>)}
+            {students}
          </ul>
       </div>
    )

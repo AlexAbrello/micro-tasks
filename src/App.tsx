@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Tasks from './Tasks';
+import {CarsTable} from "./CarsTable";
 
 
 // Hi Guys!
@@ -8,8 +9,16 @@ import Tasks from './Tasks';
 // -You have 2 arrays. You should create a new component TASKS, where you will render these arrays.
 // -Don't forget to assign types to our data.
 
+const topCars = [
+    {manufacturer:'BMW', model:'m5cs'},
+    {manufacturer:'Mercedes', model:'e63s'},
+    {manufacturer:'Audi', model:'rs6'}
+]
 
-
+export type topCars = {
+    manufacturer: string
+    model: string
+}
 function App() {
     const data1 = {
         title: "What to do",
@@ -129,6 +138,7 @@ function App() {
         <div className="App">
             <Tasks title={data1.title} tasks={data1.tasks} students={data1.students} />
             <Tasks title={data2.title} tasks={data2.tasks} students={data2.students} />
+            <CarsTable tableData={topCars}/>
         </div>
     );
 }

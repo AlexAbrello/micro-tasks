@@ -23,4 +23,7 @@
 .is-done {
   opacity: 0.5;
 }
+.forul {
+  list-style-type: none;
+}
 
